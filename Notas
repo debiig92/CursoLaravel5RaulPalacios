@@ -1,0 +1,11 @@
+Cambiar nombre de aplicacion PSR-4 o namespace:
+php artisan app:name <nombre>
+
+Para cambiar el timezone y el lenguaje se entra al archivo app.php que esta en la carpeta config:
+
+timezone:
+http://php.net/manual/es/timezones.america.php
+
+lenguaje:
+https://github.com/caouecs/Laravel-lang
+en el caso del lenguaje se descarga el lenguaje y se inserta en la carpeta lang
