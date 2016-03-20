@@ -19,3 +19,18 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+// Ruta Basica
+Route::get('prueba', function () {
+	return "<h1>Hola mundo rutas</h1>";
+});
+
+// Ruta con Parametro
+Route::get('parametros/{nombre}', function ($nombre) {
+	return "<h1>Mi nombre es: " . $nombre . "</h1>";
+});
+
+// Ruta con Parametro opcionales
+Route::get('parametros/{nombre?}', function ($nombre = "Default") {
+	return "<h1>Mi nombre es: " . $nombre . "</h1>";
+});
