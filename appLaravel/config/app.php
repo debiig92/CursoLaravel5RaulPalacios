@@ -145,6 +145,11 @@ return [
 		'Cinema\Providers\EventServiceProvider',
 		'Cinema\Providers\RouteServiceProvider',
 
+		/*
+		* My providers
+		*/
+		'Collective\Html\HtmlServiceProvider',
+
 	],
 
 	/*
@@ -192,6 +197,12 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		/*
+		* My Aliases
+		*/
+		'Form' => 'Collective\Html\FormFacade',
+		'Html' => 'Collective\Html\HtmlFacade',
 
 	],
 
