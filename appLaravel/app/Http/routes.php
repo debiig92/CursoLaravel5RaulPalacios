@@ -11,34 +11,6 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-
-// Ruta Basica
-// Route::get('prueba', function () {
-// 	return "<h1>Hola mundo rutas</h1>";
-// });
-
-// Ruta con Parametro
-// Route::get('parametros/{nombre}', function ($nombre) {
-// 	return "<h1>Mi nombre es: " . $nombre . "</h1>";
-// });
-
-// Ruta con Parametro opcionales
-// Route::get('parametros/{nombre?}', function ($nombre = "Default") {
-// 	return "<h1>Mi nombre es: " . $nombre . "</h1>";
-// });
-
-// Ejemplo Controlador
-Route::get('controlador', 'PruebaController@index');
-Route::get('name/{nombre}', 'PruebaController@nombre');
-
-// Controlador RestFul
-// para acceder a las rutas se coloca el nombre del controlador en minuscula por ejemplo "movie" en esta caso
-Route::resource('movie', 'MovieController');
+Route::get('/', 'FrontController@index');
+Route::get('contacto', 'FrontController@contacto');
+Route::get('reviews', 'FrontController@reviews');
