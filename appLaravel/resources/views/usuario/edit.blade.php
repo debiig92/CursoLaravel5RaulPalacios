@@ -2,6 +2,10 @@
 
 @section('content')
 
+	@include('alerts.request')
+
+	<h2>Editar Usuario</h2>
+
 	{!!Form::model($user, array('route' => ['usuario.update', $user->id], 'method' => 'PUT'))!!}
 		
 		@include('usuario.forms.usr')
