@@ -20,6 +20,8 @@ class UsuarioController extends Controller {
 	public function index()
 	{
 		$users = User::paginate(2);
+		// Ver solo usuarios eliminados por soft-Deletes
+		// $users = User::onlyTrashed()->paginate(2);
 		return view('usuario.index', compact('users'));
 	}
 
