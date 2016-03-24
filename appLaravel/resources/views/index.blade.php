@@ -30,6 +30,7 @@
 					{!!Form::label('contrasena','Contraseña:')!!}
 					{!!Form::password('password',['class'=>'form-control', 'placeholder'=>'Ingresa tu contraseña'])!!}
 				</div>
+
 				{!!Form::submit('Iniciar',['class'=>'btn btn-primary'])!!}
 			{!!Form::close()!!}
 		</div>

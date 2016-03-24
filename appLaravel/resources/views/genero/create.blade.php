@@ -20,3 +20,7 @@
     {!!Form::close()!!}
 
 @stop
+
+@section('scripts')
+    {!!Html::script('js/script.js')!!}
+@stop
