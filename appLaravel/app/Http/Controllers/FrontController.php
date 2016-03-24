@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller {
 
+	public function __construct()
+	{
+		$this->middleware('auth', array('only' => 'admin'));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -20,7 +25,7 @@ class FrontController extends Controller {
 	public function contacto()
 	{
 		return view('contacto');
-	}	
+	}
 
 	public function reviews()
 	{

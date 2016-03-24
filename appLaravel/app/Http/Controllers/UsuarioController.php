@@ -15,6 +15,9 @@ class UsuarioController extends Controller {
 
 	public function __construct()
 	{
+
+		$this->middleware('auth');
+		$this->middleware('admin', array('only' => array('create', 'edit')));
 		$this->beforeFilter('@find', array('only' => array('edit', 'update', 'destroy')));
 	}
 
