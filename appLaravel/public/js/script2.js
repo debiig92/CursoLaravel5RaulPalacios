@@ -55,6 +55,8 @@ $("#actualizar").click(function(){
         data: {genre: dato},
         success: function(){
             Cargar();
+            $('#myModal').modal('toggle');
+            $("#msj-success").fadeIn();
         }
     });
 
