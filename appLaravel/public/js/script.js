@@ -12,6 +12,11 @@ $('#registro').click(function(){
         success: function()
         {
             $("#msj-success").fadeIn();
+        },
+        error: function(msj){
+            console.log(msj.responseJSON.genre);
+            $("#msj").html(msj.responseJSON.genre);
+            $("#msj-error").fadeIn();
         }
     });
 });
