@@ -54,7 +54,7 @@ class GeneroController extends Controller
             Genre::create($request->all());
 
             return response()->json([
-                "mensaje" => 'Creado'
+                "mensaje" => 'Genero Agragado Correctamente'
             ]);
         }
     }
@@ -98,7 +98,7 @@ class GeneroController extends Controller
         $this->genre->save();
 
         return response()->json([
-            'mensaje' => "listo"
+            'mensaje' => "Genero Actualizado Correctamente."
         ]);
     }
 
@@ -112,7 +112,7 @@ class GeneroController extends Controller
     {
         $this->genre->delete();
 
-        return response()->json(['mensaje' => 'Borrado']);
+        return response()->json(['mensaje' => 'Genero Eliminado Correctamente.']);
     }
 
     public function listing()

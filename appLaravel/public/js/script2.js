@@ -51,8 +51,9 @@ function Eliminar(btn){
         headers: {'X-CSRF-TOKEN': token},
         type: 'DELETE',
         dataType: 'json',
-        success: function(){
+        success: function(res){
             Cargar();
+            $("#msj-succ").html(res.mensaje);
             $("#msj-success").fadeIn();
         }
     });
@@ -70,9 +71,10 @@ $("#actualizar").click(function(){
         type: 'PUT',
         dataType: 'json',
         data: {genre: dato},
-        success: function(){
+        success: function(res){
             Cargar();
             $('#myModal').modal('toggle');
+            $("#msj-succ").html(res.mensaje);
             $("#msj-success").fadeIn();
         }
     });

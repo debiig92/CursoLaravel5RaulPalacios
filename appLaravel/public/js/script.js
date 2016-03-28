@@ -9,8 +9,9 @@ $('#registro').click(function(){
         type: 'POST',
         dataType: 'json',
         data: {genre: dato},
-        success: function()
+        success: function(res)
         {
+            $("#msj-succ").html(res.mensaje);
             $("#msj-success").fadeIn();
         },
         error: function(msj){

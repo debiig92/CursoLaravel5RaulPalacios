@@ -6,15 +6,8 @@
 
     {!!Form::open()!!}
 
-        <div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong> Registro Agragado Correctamente</strong>
-        </div>
-
-        <div id="msj-error" class="alert alert-danger alert-dismissible" role="alert" style="display:none">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong id="msj"></strong>
-        </div>
+        @include('alerts.successAjax')
+        @include('alerts.errorAjax')      
 
         <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
 
