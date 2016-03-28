@@ -16,7 +16,7 @@ function Cargar(){
             $(res.data).each(function(key, value){
                 htmlContent = '<tr><td>' + value.genre + "</td><td>";
                 htmlContent += "<button value='" + value.id + "' OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button>";
-                htmlContent += "<button class='btn btn-danger'>Eliminar</button></td></tr>";
+                htmlContent += "<button value='" + value.id + "' OnClick='Eliminar(this);' class='btn btn-danger'>Eliminar</button></td></tr>";
                 tablaDatos.append(htmlContent);
             });
         } else {
@@ -38,6 +38,23 @@ function Mostrar(btn){
             alert('error');
         }
 
+    });
+}
+
+
+function Eliminar(btn){
+    var route = "http://applaravel5rp.app/genero/" + btn.value;
+    var token = $("#token").val();
+
+    $.ajax({
+        url: route,
+        headers: {'X-CSRF-TOKEN': token},
+        type: 'DELETE',
+        dataType: 'json',
+        success: function(){
+            Cargar();
+            $("#msj-success").fadeIn();
+        }
     });
 }
 
