@@ -1,8 +1,9 @@
 @extends ('layouts.admin')
 
-    @include('alerts.success')
     @section('content')
 
+    @include('alerts.success')
+    
         <table class="table">
             <thead>
                 <tr>

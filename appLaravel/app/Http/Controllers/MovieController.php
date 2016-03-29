@@ -40,7 +40,7 @@ class MovieController extends Controller {
 	public function store(Request $request)
 	{
 		Movie::create($request->all());
-		return 'Listo';
+		return redirect('/pelicula')->with('message', 'Pelicula creada correctamente');
 	}
 
 	/**
