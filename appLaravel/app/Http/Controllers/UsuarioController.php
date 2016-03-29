@@ -31,11 +31,14 @@ class UsuarioController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
 		$users = User::paginate(2);
-		// Ver solo usuarios eliminados por soft-Deletes
-		// $users = User::onlyTrashed()->paginate(2);
+
+		if ($request->ajax()) {
+			return response()->json(view('usuario.users', compact('users'))->render());
+		}
+
 		return view('usuario.index', compact('users'));
 	}
 
