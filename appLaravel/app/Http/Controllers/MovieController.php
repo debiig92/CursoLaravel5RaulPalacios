@@ -5,6 +5,9 @@ use Cinema\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Cinema\Movie;
+use Cinema\Genre;
+
 class MovieController extends Controller {
 
 	/**
@@ -14,7 +17,7 @@ class MovieController extends Controller {
 	 */
 	public function index()
 	{
-		return "Estoy en el index";
+		//
 	}
 
 	/**
@@ -24,7 +27,8 @@ class MovieController extends Controller {
 	 */
 	public function create()
 	{
-		return "Estoy en el create";
+		$genres = Genre::lists('genre', 'id');
+		return view('pelicula.create', compact('genres'));
 	}
 
 	/**
@@ -32,9 +36,10 @@ class MovieController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		Movie::create($request->all());
+		return 'Listo';
 	}
 
 	/**
