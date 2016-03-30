@@ -1,5 +1,11 @@
 @extends('layouts.principal')
 
+@section('menu')
+	<li><a href="{!!URL::to('/')!!}"><i class="home"></i></a></li>
+	<li><a href="{!!URL::to('reviews')!!}"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
+	<li><a class="active" href="{!!URL::to('contacto')!!}"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
+@endsection
+
 @section('content')
 
 	@include('alerts.success')

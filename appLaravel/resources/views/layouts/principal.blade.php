@@ -16,7 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- Custom Theme files -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Cinema Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	<meta name="keywords" content="Cinema Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!--webfont-->
@@ -27,9 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="full">
 		<div class="menu">
 			<ul>
-				<li><a class="active" href="index.html"><i class="home"></i></a></li>
-				<li><a href="reviews.html"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
-				<li><a href="contact.html"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
+				@yield('menu')
 			</ul>
 		</div>
 		<div class="main">
@@ -43,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="copyright">
 					<p> Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
 				</div>
-			</div>	
+			</div>
 		</div>
 	</div>
 
@@ -54,19 +52,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				visibleItems: 6,
 				animationSpeed: 1000,
 				autoPlay: true,
-				autoPlaySpeed: 3000,    		
+				autoPlaySpeed: 3000,
 				pauseOnHover: false,
 				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: { 
-					portrait: { 
+				responsiveBreakpoints: {
+					portrait: {
 						changePoint:480,
 						visibleItems: 2
-					}, 
-					landscape: { 
+					},
+					landscape: {
 						changePoint:640,
 						visibleItems: 3
 					},
-					tablet: { 
+					tablet: {
 						changePoint:768,
 						visibleItems: 4
 					}
@@ -76,7 +74,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 
 	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
-	
+
 	<div class="clearfix"></div>
 </body>
 </html>
