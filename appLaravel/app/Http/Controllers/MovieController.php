@@ -62,7 +62,10 @@ class MovieController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$genres = Genre::lists('genre', 'id');
+		$movie = Movie::find($id);
+
+		return view('pelicula.edit', ['movie' => $movie, 'genres' => $genres]);
 	}
 
 	/**
@@ -71,9 +74,12 @@ class MovieController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
-		//
+		$movie = Movie::find($id);
+		$movie->fill($request->all());
+		$movie->save();
+		return redirect('/pelicula')->with('message', 'Pelicula editada correctamente');
 	}
 
 	/**
@@ -84,7 +90,10 @@ class MovieController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$movie = Movie::find($id);
+		\Storage::delete($movie->path);
+		$movie->delete();
+		return redirect('/pelicula')->with('message', 'Pelicula eliminada correctamente');
 	}
 
 }

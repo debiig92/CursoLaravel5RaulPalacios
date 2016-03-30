@@ -3,7 +3,7 @@
     @section('content')
 
     @include('alerts.success')
-    
+
         <table class="table">
             <thead>
                 <tr>
@@ -23,7 +23,9 @@
                         <td>
                             <img src="movies/{!!$value->path!!}" alt="" style="width: 100px;"/>
                         </td>
-                        <td>Editar</td>
+                        <td>
+                            {!!link_to_route('pelicula.edit', $title = 'Editar', $parameters = $value->id, $attributes = ['class' => 'btn btn-primary'])!!}
+                        </td>
                     </tr>
 
                 @endforeach
