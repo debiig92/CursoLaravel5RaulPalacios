@@ -17,6 +17,7 @@ Route::get('reviews', 'FrontController@reviews');
 Route::get('admin', 'FrontController@admin');
 
 Route::resource('usuario', 'UsuarioController');
+Route::resource('mail', 'MailController');
 Route::resource('genero', 'GeneroController');
 Route::resource('pelicula', 'MovieController');
 Route::get('generos', 'GeneroController@listing');
