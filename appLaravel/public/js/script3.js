@@ -3,7 +3,7 @@ $(document).on('click', '.pagination a', function(e){
 
     // la funcion split divide la cadena el 1 significa que se optendra el lado derecho de la cadena
     var page = $(this).attr('href').split('page=')[1];
-    var route = "http://appmovie.app/usuario";
+    var route = "/usuario";
 
     $.ajax({
         url: route,

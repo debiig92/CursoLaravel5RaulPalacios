@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 function Cargar(){
     var tablaDatos = $('#datos');
-    var route = 'http://appmovie.app/generos';
+    var route = '/generos';
 
     $('#datos').empty();
 
@@ -28,7 +28,7 @@ function Cargar(){
 
 function Mostrar(btn){
     console.log(btn.value);
-    var route = "http://appmovie.app/genero/" + btn.value + "/edit";
+    var route = "/genero/" + btn.value + "/edit";
 
     $.get(route, function(res){
         if (res.success) {
@@ -43,7 +43,7 @@ function Mostrar(btn){
 
 
 function Eliminar(btn){
-    var route = "http://appmovie.app/genero/" + btn.value;
+    var route = "/genero/" + btn.value;
     var token = $("#token").val();
 
     $.ajax({
@@ -62,7 +62,7 @@ function Eliminar(btn){
 $("#actualizar").click(function(){
     var value = $("#id").val();
     var dato = $("#genre").val();
-    var route = "http://appmovie.app/genero/" + value;
+    var route = "/genero/" + value;
     var token = $("#token").val();
 
     $.ajax({

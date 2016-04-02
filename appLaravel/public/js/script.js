@@ -1,6 +1,6 @@
 $('#registro').click(function(){
     var dato = $("#genre").val();
-    var route = 'http://appmovie.app/genero';
+    var route = '/genero';
     var token = $('#token').val();
 
     $.ajax({
