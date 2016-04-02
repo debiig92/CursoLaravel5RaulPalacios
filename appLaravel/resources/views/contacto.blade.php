@@ -31,8 +31,8 @@
 			<div class="contact-form">
 				{!!Form::open(['route' => 'mail.store', 'method' => 'POST'])!!}
 					<div class="col-md-6 contact-left">
-						{!!Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre', 'required' => 'required'])!!}
-						{!!Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Correo Electronico', 'required' => 'required'])!!}
+						{!!Form::text('name', null, ['placeholder' => 'Nombre', 'required' => 'required'])!!}
+						{!!Form::text('email', null, ['placeholder' => 'Correo Electronico', 'required' => 'required'])!!}
 					</div>
 					<div class="col-md-6 contact-right">
 						{!!Form::textarea('mensaje', null, ['placeholder' => 'Mensaje'])!!}

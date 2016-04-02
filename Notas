@@ -9,3 +9,7 @@ http://php.net/manual/es/timezones.america.php
 lenguaje:
 https://github.com/caouecs/Laravel-lang
 en el caso del lenguaje se descarga el lenguaje y se inserta en la carpeta lang
+
+Para implementar la recuperacion de contraseña hay que modificar el ResetsPasswords y RedirectsUsers
+se encuentran en la siguiente direccion
+vendor/laravel/framework/src/fundation/auth
