@@ -1,24 +1,16 @@
 <?php
-
 namespace Cinema\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use Cinema\Http\Requests;
 use Cinema\Http\Requests\GenreRequest;
 use Cinema\Http\Controllers\Controller;
-
 use Cinema\Genre;
-
 use Illuminate\Routing\Route;
-
 class GeneroController extends Controller
 {
-
     public function __construct(){
         $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
     }
-
     public function find(Route $route){
         $this->genre = Genre::find($route->getParameter('genero'));
     }
@@ -31,7 +23,6 @@ class GeneroController extends Controller
     {
         return view('genero.index');
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +32,6 @@ class GeneroController extends Controller
     {
         return view('genero.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -52,13 +42,11 @@ class GeneroController extends Controller
     {
         if ($request->ajax()) {
             Genre::create($request->all());
-
             return response()->json([
                 "mensaje" => 'Genero Agragado Correctamente'
             ]);
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -69,7 +57,6 @@ class GeneroController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -83,7 +70,6 @@ class GeneroController extends Controller
             'success' => true
         ]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -94,14 +80,11 @@ class GeneroController extends Controller
     public function update(Request $request, $id)
     {
         $this->genre->fill($request->all());
-
         $this->genre->save();
-
         return response()->json([
             'mensaje' => "Genero Actualizado Correctamente."
         ]);
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -111,14 +94,11 @@ class GeneroController extends Controller
     public function destroy($id)
     {
         $this->genre->delete();
-
         return response()->json(['mensaje' => 'Genero Eliminado Correctamente.']);
     }
-
     public function listing()
     {
         $genres = Genre::all();
-
         return response()->json([
             'data' => $genres->toArray(),
             'success' => true
