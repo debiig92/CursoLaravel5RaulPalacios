@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\State;
+use App\Town;
 
 class StateController extends Controller
 {
@@ -20,6 +21,14 @@ class StateController extends Controller
     {
         $states = State::lists('name', 'id');
         return view('index', compact('states'));
+    }
+
+    public function getTowns(Request $request, $id)
+    {
+        if ( $request->ajax() ) {
+            $town = Town::towns($id);
+            return response()->json($town);
+        }
     }
 
     /**

@@ -6,5 +6,8 @@
 </head>
 <body>
     @yield('content')
+
+    {!! Html::script('js/jquery.min.js') !!}
+    {!! Html::script('js/myjs.js') !!}
 </body>
 </html>

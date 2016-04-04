@@ -2,9 +2,9 @@
 
     @section('content')
 
-    {!! Form::select('state', $states) !!}
+    {!! Form::select('state', $states, null, ['placeholder' => 'Selecciona', 'id' => 'state']) !!}
 
-    {!! Form::select('town') !!}
+    {!! Form::select('town', ['placeholder' => 'Selecciona'], null, ['id' => 'town']) !!}
 
     @endsection
 
