@@ -8,7 +8,23 @@ use Illuminate\Http\Request;
 use Cinema\Movie;
 use Cinema\Genre;
 
+use Illuminate\Routing\Route;
+
 class MovieController extends Controller {
+
+	public function __construct()
+	{
+		$this->middleware('auth');
+		$this->middleware('admin');
+		$this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+	}
+
+	public function find(Route $route)
+	{
+		$this->movie = Movie::find($route->getParameter("pelicula"));
+
+		$this->notFound($this->movie);
+	}
 
 	/**
 	 * Display a listing of the resource.
