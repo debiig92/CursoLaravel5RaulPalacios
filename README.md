@@ -17,4 +17,6 @@ Curso que permite aplicar conceptos básicos del framework Laravel en su version
 
 ###Database
 - Eloquent ORM
-- Migrations & Seeding
+- Migrations & Seeding <br><br>
+- 
+- [x] Curso Finalizado
